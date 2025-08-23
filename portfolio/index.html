@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shabasri's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-color: #0d1117;
+      --text-color: #c9d1d9;
+      --accent-color: #58a6ff;
+      --highlight: #f78166;
+      --card-bg: #161b22;
+    }
+
+    body.light {
+      --bg-color: #ffffff;
+      --text-color: #1c1c1c;
+      --accent-color: #007bff;
+      --highlight: #ff4081;
+      --card-bg: #f4f4f4;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background 0.4s, color 0.4s;
+    }
+
+    header {
+      background-color: var(--card-bg);
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #333;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      color: var(--accent-color);
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--highlight);
+    }
+
+    #themeToggle {
+      background: var(--accent-color);
+      color: var(--bg-color);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .hero {
+      text-align: center;
+      background-color: var(--card-bg);
+      padding: 4rem 2rem;
+      border-radius: 12px;
+      margin: 2rem auto;
+      max-width: 800px;
+    }
+
+    .typed-text {
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--accent-color);
+      color: var(--bg-color);
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s;
+      margin-top: 1.5rem;
+    }
+
+    .btn:hover {
+      background-color: #4096e4;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      color: var(--highlight);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .info-card,
+    .project-card,
+    .skill-card,
+    .contact-card {
+      background-color: var(--card-bg);
+      padding: 2rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .skills-grid,
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    footer {
+      background-color: var(--card-bg);
+      text-align: center;
+      padding: 1rem;
+      color: var(--text-color);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+  </style>
+</head>
+
+<body class="dark">
+
+  <header>
+    <h1>Shabasri S</h1>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button id="themeToggle">Toggle Theme</button>
+  </header>
+
+  <section id="hero" class="hero">
+    <div class="typed-text" id="typedText"></div>
+    <p>ECE Student | Web & Embedded Developer | AI/ML Enthusiast</p>
+    <a class="btn" href="/resume.pdf" download>Download Resume</a>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="info-card reveal">
+      <p>Motivated ECE student with a strong foundation in embedded systems, IoT, and web development.
+        Hands-on experience with Arduino, NodeMCU, Python, and C, along with a keen interest in AI/ML.
+        Demonstrates leadership through IEEE involvement and technical event organization. Passionate about building
+        innovative real-world solutions that bridge hardware and software.</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects">
+      <div class="project-card reveal">
+        <h3>Smart Traffic Management System</h3>
+        <p>NodeMCU, IR Sensors, Servo Motors – dynamic traffic control based on congestion levels.</p>
+      </div>
+      <div class="project-card reveal">
+        <h3>School Bell Automation</h3>
+        <p>Arduino UNO, RTC, Relay – automated school bell schedule management.</p>
+      </div>
+      <div class="project-card reveal">
+        <h3>Flood Level Monitoring</h3>
+        <p>NodeMCU, Ultrasonic Sensor – IoT-based flood alert system with Blynk app integration.</p>
+      </div>
+      <div class="project-card reveal">
+        <h3>Food Bridge</h3>
+        <p>Web-based food donation platform using HTML, JS, Firebase, and location API.</p>
+      </div>
+      <div class="project-card reveal">
+        <h3>E-Commerce Website</h3>
+        <p>Responsive store frontend using HTML, CSS, and JavaScript.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <h3>💻 Programming Languages</h3>
+        <p>Python, C++, C, JavaScript</p>
+      </div>
+      <div class="skill-card reveal">
+        <h3>🌐 Web Development</h3>
+        <p>HTML, CSS, JavaScript, Flask, Django, FastAPI, Flutter</p>
+      </div>
+      <div class="skill-card reveal">
+        <h3>💡 Embedded Systems</h3>
+        <p>Arduino, NodeMCU, Sensors, UART, I2C, SPI</p>
+      </div>
+      <div class="skill-card reveal">
+        <h3>🖌️ Design Tools</h3>
+        <p>Figma</p>
+      </div>
+      <div class="skill-card reveal">
+        <h3>🤝 Soft Skills</h3>
+        <p>Problem Solving, Communication, Leadership, Proactive Learning</p>
+      </div>
+      <div class="skill-card reveal">
+        <h3>🗣️ Languages</h3>
+        <p>English</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2 class="section-title">Experience</h2>
+    <div class="info-card reveal">
+      <p>📌 <strong>IEEE APS Secretary</strong> – Organized technical events, speaker sessions, and project exhibitions.</p>
+      <p>🔧 <strong>Internships:</strong> Embedded System Prototyping & IoT Applications</p>
+      <p>📚 <strong>Roles:</strong> Team Leader, Technical Volunteer, Project Presenter at Hackathons</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <div class="contact-card reveal">
+      <p>✉️ Email: <a href="mailto:shabasri786@gmail.com">shabasri786@gmail.com</a></p>
+      <p>📞 Phone: +91-8015116236</p>
+      <p><a href="https://www.linkedin.com/in/shabasriselvam08/" target="_blank">🔗 LinkedIn Profile</a></p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Shabasri S. All Rights Reserved.
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('themeToggle');
+    toggleBtn.onclick = () => document.body.classList.toggle('light');
+
+    const texts = ["Hi, I'm Shabasri", "Electronics & AI Enthusiast", "Full Stack & IoT Developer"];
+    let index = 0, char = 0;
+    const typeTarget = document.getElementById('typedText');
+
+    function typeText() {
+      if (char < texts[index].length) {
+        typeTarget.textContent += texts[index].charAt(char);
+        char++;
+        setTimeout(typeText, 100);
+      } else {
+        setTimeout(() => {
+          typeTarget.textContent = "";
+          char = 0;
+          index = (index + 1) % texts.length;
+          typeText();
+        }, 1500);
+      }
+    }
+    typeText();
+
+    const reveals = document.querySelectorAll('.reveal');
+    function revealOnScroll() {
+      for (let el of reveals) {
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 50) el.classList.add('visible');
+      }
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+  </script>
+</body>
+</html>
